@@ -1,11 +1,21 @@
 package com.model;
 
-public class Product {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+
+@Table
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id;
 	private String name;
-	private double price;
 	private String category;
+	private double price;
 
 	public int getId() {
 		return Id;
@@ -39,16 +49,20 @@ public class Product {
 		this.category = category;
 	}
 
-	public Product(String name, double price, String category) {
-		super();
-		this.name = name;
-		this.price = price;
-		this.category = category;
-	}
-
 	public Product() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+	public Product(String name, String category, double price) {
+		super();
+		this.name = name;
+		this.category = category;
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [Id=" + Id + ", name=" + name + ", category=" + category + ", price=" + price + "]";
+	}
 }

@@ -9,13 +9,18 @@
 </head>
 <body>
 	<div style="text-align:center">
+	
+	<div style="margin-left:40%">
+		<nav>
+			<a href="add_product.jsp">Add Product</a>
+		</nav>
+	</div>
 		<div>
 			<h1>Product Search</h1>
 		</div>
-		<% 
+		<%
 			Record r = new Record();
 			int total= r.getRecords();
-			
 		%>
 		<div>
 			<p>Please use the form below to search our Catalog <br> Our current product lines offer Models 1 to <%= total %></p>
